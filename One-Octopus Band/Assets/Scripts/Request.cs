@@ -4,5 +4,6 @@ using UnityEngine;
 
 public enum Request {
 	Drum,
-	Chicken,
+	Drumstick,
+	Guitar,
 };
