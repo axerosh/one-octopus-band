@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8739af2b59a644e4c9aeca9f18598146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minJumpSpeed: 1
+  maxJumpSpeed: 4
+  heightCheckDistance: 0.5
+  acceleration: -9.82
 --- !u!1 &7836633568947498785
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,3 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8739af2b59a644e4c9aeca9f18598146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minJumpSpeed: 0
+  maxJumpSpeed: 0
+  heightCheckDistance: 0
+  acceleration: 0
