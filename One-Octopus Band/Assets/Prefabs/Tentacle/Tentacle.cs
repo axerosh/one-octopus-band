@@ -3,7 +3,6 @@
 public class Tentacle : MonoBehaviour {
     public float pokeStrength;
     public float controlJointDist;
-    public float maxStretch;
     public float reticuleSpeed;
     /// <summary>
     /// 0: Mouse
@@ -11,14 +10,11 @@ public class Tentacle : MonoBehaviour {
     /// </summary>
     public int controller; 
 
-    private Rigidbody controlJoint;
-    private Rigidbody tipJoint;
+    public Rigidbody controlJoint;
+    public Rigidbody tipJoint;
     private Vector2 reticule;
 
     void Start() {
-        controlJoint = transform.Find("ControlJoint").GetComponent<Rigidbody>();
-        tipJoint = transform.Find("TipJoint").GetComponent<Rigidbody>();
-
         if(controller != 0) {
             reticule = new Vector2(0, 0);
         }
@@ -38,17 +34,15 @@ public class Tentacle : MonoBehaviour {
         int layerMask = LayerMask.GetMask("ReticulePlane");
         if(Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask)) {
             newPos = hit.point;
-            controlJoint.MovePosition(newPos);
+            controlJoint.position = newPos;
         }
-
-        if(Vector3.Distance(controlJoint.transform.position, tipJoint.transform.position) <= maxStretch) {
-            if (controller == 0) {
-                if (Input.GetMouseButton(0)) {
-                    tipJoint.AddForce(-controlJoint.transform.up.normalized * pokeStrength);
-                }
-            } else if (Input.GetButton("Stretch" + controller)) {
-                tipJoint.AddForce(-controlJoint.transform.up.normalized * pokeStrength);
+        
+        if (controller == 0) {
+            if (Input.GetMouseButton(0)) {
+                tipJoint.AddForce(controlJoint.transform.up.normalized * pokeStrength);
             }
+        } else if (Input.GetButton("Stretch" + controller)) {
+            tipJoint.AddForce(controlJoint.transform.up.normalized * pokeStrength);
         }
     }
 }

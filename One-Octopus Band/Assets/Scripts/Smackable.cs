@@ -15,6 +15,7 @@ public class Smackable : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Am i here?");
         var tentacle = other.gameObject.GetComponent<Tentacle>();
         
 		AudioSource audioSource;
