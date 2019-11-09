@@ -1,8 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEditor;
 
-public enum Request {
-	Drum,
-	Chicken,
-};
+public class Request : ScriptableObject
+{
+    public Request(InstrumentType instrumentType, int progress)
+    {
+        InstrumentType = instrumentType;
+        Progress = progress;
+    }
+    public InstrumentType InstrumentType;
+    public int Progress;
+}

@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
+
 
 public class AudienceManager : MonoBehaviour
 {
-
-	public int maxMemberCount;
+    public int score = 0;
+    public Text scoreList;
+    public int maxMemberCount;
 	public int maxActiveRequestCount;
 	public float minRequestCooldown;
 	public float maxRequestCooldown;
@@ -24,9 +27,9 @@ public class AudienceManager : MonoBehaviour
 	void Start()
 	{
 		startTime = Time.time;
-		foreach (var request in System.Enum.GetValues(typeof(Request)))
+		foreach (var request in System.Enum.GetValues(typeof(InstrumentType)))
 		{
-			freeRequests.Add((Request)request);
+			freeRequests.Add(new Request((InstrumentType)request, 0));
 		}
 
 		spawner = GetComponent<AudienceSpawner>();
@@ -64,15 +67,39 @@ public class AudienceManager : MonoBehaviour
 		}
 	}
 
-	public void OnRequestCompleted(Request request)
+
+	public void OnInstrumentSmacked(InstrumentType instrument)
 	{
-		if (activeRequests.TryGetValue(request, out var member))
-		{
-			freeRequests.Add(request);
-			freeMembers.Add(member);
-			activeRequests.Remove(request);
-			member.DisableRequest();
-		}
+        List<Request> toRemove = new List<Request>();
+        
+        foreach (var requestMember in activeRequests)
+        {
+            var request = requestMember.Key;
+            var member = requestMember.Value;
+            if (instrument != request.InstrumentType) continue;
+            
+            Debug.Log(request.InstrumentType + " " + request.Progress);
+
+            if (request.Progress == 5)
+            {
+                request.Progress = 0;
+                toRemove.Add(request);
+                score += 10;
+                scoreList.text = $"Score: {score}";
+            }
+            else
+            {
+                request.Progress++;
+            }
+        }
+        foreach (var request in toRemove)
+        {
+            activeRequests.TryGetValue(request, out var member);
+            freeRequests.Add(request);
+            freeMembers.Add(member);
+            activeRequests.Remove(request);
+            member.DisableRequest();
+        }
 	}
 
 	private void OnDrawGizmosSelected()

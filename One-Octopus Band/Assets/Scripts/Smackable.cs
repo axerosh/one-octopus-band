@@ -5,16 +5,18 @@ using System.Collections.Generic;
 
 public class Smackable : MonoBehaviour
 {
-    public UnityEvent OnSmacked;
+    public InstrumentType InstrumentType;
+    public UnityEvent<InstrumentType> OnSmacked;
 	public AudioSource audioSourcePrefab;
     public AudioClip clip;
+    public AudienceManager audienceManager;
 
-	private Queue<AudioSource> audioQueue = new Queue<AudioSource>();
+    private Queue<AudioSource> audioQueue = new Queue<AudioSource>();
 
     void OnTriggerEnter(Collider other)
     {
         var tentacle = other.gameObject.GetComponent<Tentacle>();
-
+        
 		AudioSource audioSource;
 		if (audioQueue.Count == 0 || audioQueue.Peek().isPlaying)
 		{
@@ -28,10 +30,10 @@ public class Smackable : MonoBehaviour
 		}
 		audioSource.clip = clip;
 		audioSource.Play();
-
-		if (tentacle != null)
+        audienceManager.OnInstrumentSmacked(InstrumentType);
+        if (tentacle != null)
         {
-            OnSmacked.Invoke();
+            OnSmacked.Invoke(InstrumentType);
         }
     }
 }

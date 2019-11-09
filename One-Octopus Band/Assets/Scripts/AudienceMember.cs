@@ -34,14 +34,23 @@ public class AudienceMember : MonoBehaviour
 	public void SetRequest(Request request)
 	{
 		Color color = Color.black;
-		switch (request)
+		switch (request.InstrumentType)
 		{
-			case Request.Drum:
+			case InstrumentType.Drum:
 				color = Color.red;
 				break;
-			case Request.Chicken:
-				color = Color.yellow;
-				break;
+			//case InstrumentType.Chicken:
+			//	color = Color.yellow;
+			//	break;
+            case InstrumentType.Drumshtick:
+                color = Color.green;
+                break;
+            case InstrumentType.Guitar:
+                color = Color.cyan;
+                break;
+            //case InstrumentType.Triangle:
+            //    color = Color.grey;
+            //    break;
 		}
 		GetComponentInChildren<Renderer>().material.SetColor("_Color", color);
 	}
