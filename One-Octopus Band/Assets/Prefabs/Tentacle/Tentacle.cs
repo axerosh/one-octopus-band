@@ -47,7 +47,6 @@ public class Tentacle : MonoBehaviour {
                     tipJoint.AddForce(-controlJoint.transform.up.normalized * pokeStrength);
                 }
             } else if (Input.GetButton("Stretch" + controller)) {
-                Debug.Log("Stretch" + controller + " pressed");
                 tipJoint.AddForce(-controlJoint.transform.up.normalized * pokeStrength);
             }
         }

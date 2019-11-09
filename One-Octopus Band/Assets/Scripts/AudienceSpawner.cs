@@ -16,7 +16,6 @@ public class AudienceSpawner : MonoBehaviour
 
 		while (!validPosition && spawnAttempts < maxSpawnAttempts)
 		{
-			print("Attempt " + spawnAttempts);
 			++spawnAttempts;
 			
 			spawnPos = new Vector3(
@@ -45,7 +44,6 @@ public class AudienceSpawner : MonoBehaviour
 		}
 		else
 		{
-			print("No more attempts, mate!");
 			return null;
 		}
 	}
