@@ -35,7 +35,7 @@ public class Tentacle : MonoBehaviour {
 
             ray = Camera.main.ScreenPointToRay(reticule);
         }
-        int layerMask = 1 << 8;
+        int layerMask = LayerMask.GetMask("ReticulePlane");
         if(Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask)) {
             newPos = hit.point;
             controlJoint.MovePosition(newPos);

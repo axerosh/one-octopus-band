@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8277074231006817484}
   - component: {fileID: 8277074231006817487}
   - component: {fileID: 8277074231006817486}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: ReticulePlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

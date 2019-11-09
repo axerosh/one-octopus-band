@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9064251732146103123}
   - component: {fileID: 9064251732146103125}
   - component: {fileID: 9064251732146103122}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Capsule (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9064251732146103124}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -15.584907, z: 0}
+  m_LocalPosition: {x: 0, y: -8.58, z: 0}
   m_LocalScale: {x: 0.5904899, y: 0.5904899, z: 0.5904899}
   m_Children: []
   m_Father: {fileID: 9064251733354867970}
@@ -122,7 +122,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -1.0999991, z: 0}
+  m_ConnectedAnchor: {x: 0, y: -1.0966471, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 9064251732260178338}
   - component: {fileID: 9064251732260178341}
   - component: {fileID: 9064251732260178343}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ControlJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9064251732260178342}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.3947077, z: 0}
+  m_LocalPosition: {x: 0, y: -0.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9064251733354867970}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 9064251732941671342}
   - component: {fileID: 9064251732941671504}
   - component: {fileID: 9064251732941671505}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Capsule (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9064251732941671507}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.394708, z: 0}
+  m_LocalPosition: {x: 0, y: -2.39, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children: []
   m_Father: {fileID: 9064251733354867970}
@@ -388,7 +388,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -1.1000004, z: 0}
+  m_ConnectedAnchor: {x: 0, y: -1.1000001, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 9064251733101116623}
   - component: {fileID: 9064251733101116622}
   - component: {fileID: 9064251733101116657}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TipJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9064251733101116656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -16.765886, z: 0}
+  m_LocalPosition: {x: 0, y: -9.76, z: 0}
   m_LocalScale: {x: 0.5314409, y: 0.5314409, z: 0.5314409}
   m_Children: []
   m_Father: {fileID: 9064251733354867970}
@@ -544,7 +544,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -1.1000001, z: 0}
+  m_ConnectedAnchor: {x: 0, y: -1.0983415, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 9064251733164071653}
   - component: {fileID: 9064251733164071655}
   - component: {fileID: 9064251733164071652}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -607,7 +607,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9064251733164071654}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -11.194708, z: 0}
+  m_LocalPosition: {x: 0, y: -4.19, z: 0}
   m_LocalScale: {x: 0.80999994, y: 0.80999994, z: 0.80999994}
   m_Children: []
   m_Father: {fileID: 9064251733354867970}
@@ -700,7 +700,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -1.1000009, z: 0}
+  m_ConnectedAnchor: {x: 0, y: -1.1, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -744,7 +744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9064251733354867970}
   - component: {fileID: 9064251733354867971}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tentacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9064251733354867973}
   m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0, z: -6}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9064251732260178336}
@@ -803,7 +803,7 @@ GameObject:
   - component: {fileID: 9064251733442692341}
   - component: {fileID: 9064251733442692343}
   - component: {fileID: 9064251733442692340}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Capsule (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9064251733442692342}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -12.814708, z: 0}
+  m_LocalPosition: {x: 0, y: -5.81, z: 0}
   m_LocalScale: {x: 0.7289999, y: 0.7289999, z: 0.7289999}
   m_Children: []
   m_Father: {fileID: 9064251733354867970}
@@ -959,7 +959,7 @@ GameObject:
   - component: {fileID: 9064251733740177217}
   - component: {fileID: 9064251733740177219}
   - component: {fileID: 9064251733740177216}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Capsule (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -974,7 +974,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9064251733740177218}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -14.272707, z: 0}
+  m_LocalPosition: {x: 0, y: -7.27, z: 0}
   m_LocalScale: {x: 0.6560999, y: 0.6560999, z: 0.6560999}
   m_Children: []
   m_Father: {fileID: 9064251733354867970}
@@ -1067,7 +1067,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -1.0999988, z: 0}
+  m_ConnectedAnchor: {x: 0, y: -1.102744, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
