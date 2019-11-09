@@ -927,7 +927,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   audio: {fileID: 1091287439}
-  clip: {fileID: 8300000, guid: 91c56e495ef337f4993e5e8ba459461c, type: 3}
+  clip: {fileID: 8300000, guid: 581a24c3c69102140bb834e293be1861, type: 3}
 --- !u!4 &631774588 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3ec7168663bede3608d334dbe7ac4cc8,
@@ -1568,7 +1568,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 581a24c3c69102140bb834e293be1861, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
