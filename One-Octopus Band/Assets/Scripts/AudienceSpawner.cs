@@ -6,9 +6,9 @@ public class AudienceSpawner : MonoBehaviour
 {
 	public int maxSpawnAttempts;
 	public float obstacleCheckRadius;
-	public AudienceMember audiencePrefab;
+	public AudienceMember memberPrefab;
 
-	public AudienceMember SpawnAudienceMember()
+	public AudienceMember TrySpawnMember()
 	{	
 		Vector3 spawnPos = Vector3.zero;
 		bool validPosition = false;
@@ -40,7 +40,7 @@ public class AudienceSpawner : MonoBehaviour
 		
 		if (validPosition)
 		{
-			return Instantiate(audiencePrefab, spawnPos, Quaternion.identity);
+			return Instantiate(memberPrefab, spawnPos, Quaternion.identity);
 		}
 		else
 		{

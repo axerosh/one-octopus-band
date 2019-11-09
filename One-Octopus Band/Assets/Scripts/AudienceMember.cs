@@ -31,6 +31,26 @@ public class AudienceMember : MonoBehaviour
 		transform.position += new Vector3(0.0f, speed * Time.deltaTime, 0.0f);
 	}
 
+	public void SetRequest(Request request)
+	{
+		Color color = Color.black;
+		switch (request)
+		{
+			case Request.Drum:
+				color = Color.red;
+				break;
+			case Request.Chicken:
+				color = Color.yellow;
+				break;
+		}
+		GetComponentInChildren<Renderer>().material.SetColor("_Color", color);
+	}
+
+	public void DisableRequest()
+	{
+		GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.white);
+	}
+
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.cyan;
