@@ -75,6 +75,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpawnAttempts: 10
-  obstacleCheckRadius: 0.7
+  obstacleCheckRadius: 1.75
   memberPrefab: {fileID: 3469642581209465127, guid: 6160acb228aa7ec499ed75c7948fbe2e,
     type: 3}
