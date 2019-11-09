@@ -34,6 +34,6 @@ public class AudienceMember : MonoBehaviour
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.cyan;
-		Gizmos.DrawLine(transform.position, transform.position + new Vector3(0.0f, speed, 0.0f));
+		Gizmos.DrawRay(transform.position, new Vector3(0.0f, speed, 0.0f));
 	}
 }
