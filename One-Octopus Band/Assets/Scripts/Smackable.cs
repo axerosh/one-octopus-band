@@ -1,31 +1,36 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
+using System.Collections.Generic;
 
 
 public class Smackable : MonoBehaviour
 {
     public UnityEvent OnSmacked;
-    public AudioSource audio;
+	public AudioSource audioSourcePrefab;
     public AudioClip clip;
 
-    void Update()
-    {
-        //OnSmacked.Invoke();
-    }
+	private Queue<AudioSource> audioQueue = new Queue<AudioSource>();
 
     void OnTriggerEnter(Collider other)
     {
-        
         var tentacle = other.gameObject.GetComponent<Tentacle>();
 
-        audio.clip = clip;
-        audio.Play();
+		AudioSource audioSource;
+		if (audioQueue.Count == 0 || audioQueue.Peek().isPlaying)
+		{
+			audioSource = Instantiate(audioSourcePrefab, transform);
+			audioQueue.Enqueue(audioSource);
+		}
+		else
+		{
+			audioSource = audioQueue.Dequeue();
+			audioQueue.Enqueue(audioSource);
+		}
+		audioSource.clip = clip;
+		audioSource.Play();
 
-        Debug.Log("this runs");
-        if (tentacle != null)
+		if (tentacle != null)
         {
-           
             OnSmacked.Invoke();
         }
     }
