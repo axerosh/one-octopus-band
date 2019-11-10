@@ -54,7 +54,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 35f22fff154d2177eaddf059c7764140,
         type: 3}
       propertyPath: m_Name
-      value: drumschtick
+      value: drumschtick Variant
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 35f22fff154d2177eaddf059c7764140,
         type: 3}

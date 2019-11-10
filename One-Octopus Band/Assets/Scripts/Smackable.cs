@@ -9,14 +9,14 @@ public class Smackable : MonoBehaviour
     public SmackedEvent OnSmacked;
 	public AudioSource audioSourcePrefab;
     public AudioClip clip;
+    public string requiredTool;
 
     private Queue<AudioSource> audioQueue = new Queue<AudioSource>();
 
     void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Am i here?");
         var tentacle = other.gameObject.GetComponent<Tentacle>();
-        
+
 		AudioSource audioSource;
 		if (audioQueue.Count == 0 || audioQueue.Peek().isPlaying)
 		{

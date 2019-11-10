@@ -8,4 +8,5 @@ public enum InstrumentType {
     //Triangle,
     Guitar,
 	//Chicken,
+    Maracas
 };
