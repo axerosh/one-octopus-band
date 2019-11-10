@@ -341,6 +341,18 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &96997860 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8616708362197388276, guid: 2a13e813742f33a4daf5ad5e1298f52e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5358745172455970595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &323116260 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8277074231006817485, guid: 4b14f86a3295369469b2cba2d4cf1961,
@@ -543,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ff8a33983f3d34996d78ff472559a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InstrumentType: 2
+  instrumentType: 0
   OnSmacked:
     m_PersistentCalls:
       m_Calls:
@@ -1843,6 +1855,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935820345}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1955877045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7921151138315503360, guid: 2a13e813742f33a4daf5ad5e1298f52e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5358745172455970595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1963841492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2417,6 +2441,26 @@ PrefabInstance:
       propertyPath: scoreList
       value: 
       objectReference: {fileID: 750266690}
+    - target: {fileID: 8387704481715208552, guid: aeedc9c42d32f7c47a0331f85ad9ff90,
+        type: 3}
+      propertyPath: scoreDisplay
+      value: 
+      objectReference: {fileID: 750266690}
+    - target: {fileID: 8387704481715208552, guid: aeedc9c42d32f7c47a0331f85ad9ff90,
+        type: 3}
+      propertyPath: restart
+      value: 
+      objectReference: {fileID: 1955877045}
+    - target: {fileID: 8387704481715208552, guid: aeedc9c42d32f7c47a0331f85ad9ff90,
+        type: 3}
+      propertyPath: gameOverDisplay
+      value: 
+      objectReference: {fileID: 96997860}
+    - target: {fileID: 8387704481715208552, guid: aeedc9c42d32f7c47a0331f85ad9ff90,
+        type: 3}
+      propertyPath: maxFailedRequests
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8387704481715208566, guid: aeedc9c42d32f7c47a0331f85ad9ff90,
         type: 3}
       propertyPath: obstacleCheckRadius

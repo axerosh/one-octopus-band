@@ -62,7 +62,7 @@ public class AudienceManager : MonoBehaviour
         {
             restart.transform.GetChild(i).gameObject.SetActive(false);
         }
-	}
+    }
 
 	private void Update()
 	{
@@ -84,7 +84,6 @@ public class AudienceManager : MonoBehaviour
             {
                 if (failedRequests >= maxFailedRequests)
                 {
-
                     gameOverDisplay.enabled = true;
                     restart.enabled = true;
                     restart.gameObject.SetActive(true);
@@ -96,8 +95,6 @@ public class AudienceManager : MonoBehaviour
                 else
                 {
                     failedRequests++;
-
-                    Debug.Log(failedRequests + " failed requests");
                 }
             }
             request.timeLeft = request.maxTimeLeft;
@@ -125,7 +122,8 @@ public class AudienceManager : MonoBehaviour
 
     public void OnRestartClicked()
     {
-        SceneManager.LoadScene(0);
+        Debug.Log("this runs");
+        SceneManager.LoadScene("Concert");
     }
 	
     public void OnSmacked(InstrumentType instrument)
@@ -136,7 +134,6 @@ public class AudienceManager : MonoBehaviour
         {
             var request = requestMember.Key;
             var member = requestMember.Value;
-            Debug.Log(request.instrumentType + " " + request.timeLeft);
 
             if (request.instrumentType == instrument)
             {
