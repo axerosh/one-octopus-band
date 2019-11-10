@@ -9,6 +9,7 @@ public class RequestBubble : MonoBehaviour
 	public Sprite guitarSprite;
 	public Sprite maracasSprite;
 	public Sprite operaSprite;
+	public Sprite cowbellSprite;
 	public GameObject tail;
 
 	private SpriteRenderer spriteRenderer;
@@ -43,6 +44,9 @@ public class RequestBubble : MonoBehaviour
 				break;
 			case InstrumentType.Opera:
 				spriteRenderer.sprite = operaSprite;
+				break;
+			case InstrumentType.Cowbell:
+				spriteRenderer.sprite = cowbellSprite;
 				break;
 		}
 		SetVisible(true);
