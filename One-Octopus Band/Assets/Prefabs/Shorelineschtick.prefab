@@ -43,7 +43,8 @@ MonoBehaviour:
         m_CallState: 2
   audioSourcePrefab: {fileID: 2574044970171691851, guid: 04cf03e43f75e274fb8618e1751bfcc2,
     type: 3}
-  clip: {fileID: 8300000, guid: 6f50604e6844e414db8f595c4bf25bfb, type: 3}
+  clips:
+  - {fileID: 8300000, guid: 41da332a8218fb5408f6963eaf88fa68, type: 3}
 --- !u!1001 &5015012681110152445
 PrefabInstance:
   m_ObjectHideFlags: 0

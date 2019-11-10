@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class AudienceManager : MonoBehaviour
 {
-    public int score = 0;
+	private int score = 0;
     public Text scoreList;
     public int maxMemberCount;
 	public int maxActiveRequestCount;
@@ -27,9 +27,12 @@ public class AudienceManager : MonoBehaviour
 	void Start()
 	{
 		startTime = Time.time;
-		foreach (var request in System.Enum.GetValues(typeof(InstrumentType)))
+		foreach (var instrument in System.Enum.GetValues(typeof(InstrumentType)))
 		{
-			freeRequests.Add(new Request((InstrumentType)request, 0));
+			var request = ScriptableObject.CreateInstance<Request>();
+			request.instrumentType = (InstrumentType)instrument;
+			request.Progress = 0;
+			freeRequests.Add(request);
 		}
 
 		spawner = GetComponent<AudienceSpawner>();
@@ -77,7 +80,6 @@ public class AudienceManager : MonoBehaviour
         {
             var request = requestMember.Key;
             var member = requestMember.Value;
-            Debug.Log(request.instrumentType + " " + request.Progress);
             if (instrument != request.instrumentType) continue;
             
             
@@ -87,7 +89,10 @@ public class AudienceManager : MonoBehaviour
                 request.Progress = 0;
                 toRemove.Add(request);
                 score += 10;
-                scoreList.text = $"Score: {score}";
+				if (scoreList != null)
+				{
+					scoreList.text = $"Score: {score}";
+				}
             }
             else
             {
