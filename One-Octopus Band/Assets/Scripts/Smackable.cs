@@ -8,7 +8,6 @@ public class Smackable : MonoBehaviour
     public InstrumentType InstrumentType;
     public SmackedEvent OnSmacked;
 	public AudioSource audioSourcePrefab;
-    public string requiredTool;
     public AudioClip[] clips;
 
     private Queue<AudioSource> audioQueue = new Queue<AudioSource>();
