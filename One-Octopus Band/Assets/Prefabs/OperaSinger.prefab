@@ -51,6 +51,7 @@ MonoBehaviour:
       m_Calls: []
   audioSourcePrefab: {fileID: 2574044970171691851, guid: 04cf03e43f75e274fb8618e1751bfcc2,
     type: 3}
+  requiredTool: 
   clips:
   - {fileID: 8300000, guid: 99256b62d9da74b4ba6c09d5d229d225, type: 3}
   - {fileID: 8300000, guid: b602b96c06656c0bd8d7ebb6d263c355, type: 3}
@@ -66,7 +67,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.93
+  m_Radius: 0.45
   m_Height: 3.95
   m_Direction: 1
   m_Center: {x: 0, y: 1.03, z: 0}

@@ -10,6 +10,7 @@ public class Smackable : MonoBehaviour
 	public AudioSource audioSourcePrefab;
     public string requiredTool;
     public AudioClip[] clips;
+    public float VolumeScaler = 1f;
 
     private Queue<AudioSource> audioQueue = new Queue<AudioSource>();
 
@@ -32,6 +33,7 @@ public class Smackable : MonoBehaviour
 		if (clips.Length > 0)
 		{
 			audioSource.clip = clips[Random.Range(0, clips.Length)];
+            audioSource.volume = VolumeScaler;
 			audioSource.Play();
 		}
     
