@@ -14,7 +14,6 @@ public class Smackable : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Am i here?");
         var tentacle = other.gameObject.GetComponent<Tentacle>();
         
 		AudioSource audioSource;
@@ -34,8 +33,7 @@ public class Smackable : MonoBehaviour
 			audioSource.clip = clips[Random.Range(0, clips.Length)];
 			audioSource.Play();
 		}
-
-        Debug.Log(InstrumentType);        
+    
         OnSmacked.Invoke(InstrumentType);
     }
 }

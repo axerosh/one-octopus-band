@@ -80,7 +80,6 @@ public class AudienceManager : MonoBehaviour
         {
             var request = requestMember.Key;
             var member = requestMember.Value;
-            Debug.Log(request.instrumentType + " " + request.Progress);
             if (instrument != request.instrumentType) continue;
             
             
@@ -102,7 +101,6 @@ public class AudienceManager : MonoBehaviour
         }
         foreach (var request in toRemove)
         {
-			print("Remove request " + request);
             activeRequests.TryGetValue(request, out var member);
             freeRequests.Add(request);
             freeMembers.Add(member);
