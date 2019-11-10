@@ -8,7 +8,7 @@ public class Smackable : MonoBehaviour
     public InstrumentType InstrumentType;
     public SmackedEvent OnSmacked;
 	public AudioSource audioSourcePrefab;
-    public AudioClip clip;
+    public AudioClip[] clips;
 
     private Queue<AudioSource> audioQueue = new Queue<AudioSource>();
 
@@ -28,7 +28,8 @@ public class Smackable : MonoBehaviour
 			audioSource = audioQueue.Dequeue();
 			audioQueue.Enqueue(audioSource);
 		}
-		audioSource.clip = clip;
+		
+		audioSource.clip = clips[Random.Range(0,clips.Length)];
 		audioSource.Play();
 
         Debug.Log(InstrumentType);        

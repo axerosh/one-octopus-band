@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ff8a33983f3d34996d78ff472559a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InstrumentType: 0
   OnSmacked:
     m_PersistentCalls:
       m_Calls:
@@ -77,7 +78,8 @@ MonoBehaviour:
         m_CallState: 2
   audioSourcePrefab: {fileID: 2574044970171691851, guid: 04cf03e43f75e274fb8618e1751bfcc2,
     type: 3}
-  clip: {fileID: 8300000, guid: 18eca49f583d8b71bbf5427e53ecb33b, type: 3}
+  clips:
+  - {fileID: 8300000, guid: 18eca49f583d8b71bbf5427e53ecb33b, type: 3}
 --- !u!1001 &2890479997984087999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -161,7 +163,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 117960643, guid: 27fa15d889d7efd4ba9bc8533cb63f54, type: 3}
+      propertyPath: clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117960643, guid: 27fa15d889d7efd4ba9bc8533cb63f54, type: 3}
       propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5102aac1efcff5dc9abb348023694656, type: 3}
+    - target: {fileID: 117960643, guid: 27fa15d889d7efd4ba9bc8533cb63f54, type: 3}
+      propertyPath: clips.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 5102aac1efcff5dc9abb348023694656, type: 3}
     - target: {fileID: 611889216880539677, guid: 27fa15d889d7efd4ba9bc8533cb63f54,
@@ -259,6 +269,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.9499996
       objectReference: {fileID: 0}
+    - target: {fileID: 117960643, guid: 27fa15d889d7efd4ba9bc8533cb63f54, type: 3}
+      propertyPath: clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117960643, guid: 27fa15d889d7efd4ba9bc8533cb63f54, type: 3}
+      propertyPath: clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: be4ca21edeb1da01084b85df877082b8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27fa15d889d7efd4ba9bc8533cb63f54, type: 3}
 --- !u!4 &7141066854461355824 stripped
