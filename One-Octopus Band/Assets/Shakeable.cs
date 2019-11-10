@@ -5,7 +5,7 @@ public class Shakeable : MonoBehaviour {
     public InstrumentType type;
     public SmackedEvent OnSmacked;
     public AudioSource audioSourcePrefab;
-    public AudioClip clip;
+    public AudioClip[] clips;
     public float velocityThreshold;
     public float respawnThreshold;
     public float audioCooldown;
@@ -37,7 +37,7 @@ public class Shakeable : MonoBehaviour {
                 audioSource = audioQueue.Dequeue();
                 audioQueue.Enqueue(audioSource);
             }
-            audioSource.clip = clip;
+            audioSource.clip = clips[Random.Range(0, clips.Length)];
             audioSource.Play();
 
             OnSmacked.Invoke(type);
