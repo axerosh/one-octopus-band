@@ -5,9 +5,9 @@ public class Request : ScriptableObject
 {
     public Request(InstrumentType instrumentType, int progress)
     {
-        InstrumentType = instrumentType;
+        this.instrumentType = instrumentType;
         Progress = progress;
     }
-    public InstrumentType InstrumentType;
+    public InstrumentType instrumentType;
     public int Progress;
 }

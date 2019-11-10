@@ -68,17 +68,19 @@ public class AudienceManager : MonoBehaviour
 	}
 
 
-	public void OnInstrumentSmacked(InstrumentType instrument)
+	public void OnSmacked(InstrumentType instrument)
 	{
         List<Request> toRemove = new List<Request>();
+        
         
         foreach (var requestMember in activeRequests)
         {
             var request = requestMember.Key;
             var member = requestMember.Value;
-            if (instrument != request.InstrumentType) continue;
+            Debug.Log(request.instrumentType + " " + request.Progress);
+            if (instrument != request.instrumentType) continue;
             
-            Debug.Log(request.InstrumentType + " " + request.Progress);
+            
 
             if (request.Progress == 5)
             {

@@ -25,7 +25,7 @@ public class RequestBubble : MonoBehaviour
 
 	public void SetRequest(Request request)
     {
-        switch (request.InstrumentType)
+        switch (request.instrumentType)
 		{
 			case InstrumentType.Drum:
 				spriteRenderer.sprite = drumSprite;
