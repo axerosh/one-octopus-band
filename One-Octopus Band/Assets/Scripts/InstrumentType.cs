@@ -10,4 +10,5 @@ public enum InstrumentType {
 	//Chicken,
     Maracas,
 	Opera,
+	Cowbell
 };

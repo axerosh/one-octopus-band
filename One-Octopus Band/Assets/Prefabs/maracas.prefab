@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2550909323984902427}
   - component: {fileID: 4139371297257923932}
   m_Layer: 13
-  m_Name: Maracas
+  m_Name: maracas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,8 @@ MonoBehaviour:
         m_CallState: 2
   audioSourcePrefab: {fileID: 2574044970171691851, guid: 04cf03e43f75e274fb8618e1751bfcc2,
     type: 3}
-  clip: {fileID: 8300000, guid: 0230f95c1a317963f9b0a4460827cef3, type: 3}
+  clips:
+  - {fileID: 8300000, guid: 0230f95c1a317963f9b0a4460827cef3, type: 3}
   velocityThreshold: 100
   respawnThreshold: 3
   audioCooldown: 0.5
