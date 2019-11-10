@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Tentacle : MonoBehaviour {
     public float pokeStrength;
@@ -12,6 +13,8 @@ public class Tentacle : MonoBehaviour {
 
     public Rigidbody controlJoint;
     public Rigidbody tipJoint;
+    public List<Pickuper> pickupers = new List<Pickuper>();
+
     private Vector2 reticule;
 
     void Start() {
@@ -36,13 +39,39 @@ public class Tentacle : MonoBehaviour {
             newPos = hit.point;
             controlJoint.position = newPos;
         }
-        
+
         if (controller == 0) {
             if (Input.GetMouseButton(0)) {
                 tipJoint.AddForce(controlJoint.transform.up.normalized * pokeStrength);
             }
-        } else if (Input.GetButton("Stretch" + controller)) {
-            tipJoint.AddForce(controlJoint.transform.up.normalized * pokeStrength);
+            if (Input.GetMouseButtonDown(1)) {
+                PickupMode();
+            }
+            if (Input.GetMouseButtonUp(1)) {
+                ReleaseAllPickups();
+            }
+        } else {
+            if (Input.GetButton("Stretch" + controller)) {
+                tipJoint.AddForce(controlJoint.transform.up.normalized * pokeStrength);
+            }
+            if (Input.GetButtonDown("Pickup" + controller)) {
+                PickupMode();
+            }
+            if (Input.GetButtonUp("Pickup" + controller)) {
+                ReleaseAllPickups();
+            }
+        }
+    }
+
+    private void PickupMode() {
+        foreach(Pickuper p in pickupers) {
+            p.StartPickUp();
+        }
+    }
+
+    private void ReleaseAllPickups() {
+        foreach(Pickuper p in pickupers) {
+            p.Release();
         }
     }
 }

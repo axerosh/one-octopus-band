@@ -34,10 +34,12 @@ public class AudienceManager : MonoBehaviour
 	void Start()
 	{
 		startTime = Time.time;
-        
-		foreach (var request in System.Enum.GetValues(typeof(InstrumentType)))
+
+		foreach (var instrument in System.Enum.GetValues(typeof(InstrumentType)))
 		{
-			freeRequests.Add(new Request((InstrumentType)request));
+			var request = ScriptableObject.CreateInstance<Request>();
+			request.instrumentType = (InstrumentType)instrument;
+			freeRequests.Add(request);
 		}
 
 		spawner = GetComponent<AudienceSpawner>();
@@ -126,6 +128,8 @@ public class AudienceManager : MonoBehaviour
 	
     public void OnSmacked(InstrumentType instrument)
 	{
+        List<Request> toRemove = new List<Request>();
+        
         foreach (var requestMember in activeRequests)
         {
             var request = requestMember.Key;

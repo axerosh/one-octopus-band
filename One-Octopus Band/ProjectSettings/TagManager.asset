@@ -18,8 +18,8 @@ TagManager:
   - ReticulePlane
   - Tentacle
   - Smackable
-  - 
-  - 
+  - Pickupable
+  - Pickuper
   - 
   - 
   - 

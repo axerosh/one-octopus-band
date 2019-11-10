@@ -8,15 +8,15 @@ public class Smackable : MonoBehaviour
     public InstrumentType instrumentType;
     public SmackedEvent OnSmacked;
 	public AudioSource audioSourcePrefab;
-    public AudioClip clip;
+    public string requiredTool;
+    public AudioClip[] clips;
 
     private Queue<AudioSource> audioQueue = new Queue<AudioSource>();
 
     void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Am i here?");
         var tentacle = other.gameObject.GetComponent<Tentacle>();
-        
+
 		AudioSource audioSource;
 		if (audioQueue.Count == 0 || audioQueue.Peek().isPlaying)
 		{
@@ -28,10 +28,13 @@ public class Smackable : MonoBehaviour
 			audioSource = audioQueue.Dequeue();
 			audioQueue.Enqueue(audioSource);
 		}
-		audioSource.clip = clip;
-		audioSource.Play();
-
-        Debug.Log(instrumentType);        
+		
+		if (clips.Length > 0)
+		{
+			audioSource.clip = clips[Random.Range(0, clips.Length)];
+			audioSource.Play();
+		}
+    
         OnSmacked.Invoke(instrumentType);
     }
 }

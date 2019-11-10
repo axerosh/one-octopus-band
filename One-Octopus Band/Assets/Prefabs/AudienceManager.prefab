@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16142d62277e13249bf064a286f4dab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreList: {fileID: 0}
   maxMemberCount: 10
   maxActiveRequestCount: 2
   minRequestCooldown: 1
@@ -75,6 +76,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpawnAttempts: 10
-  obstacleCheckRadius: 1.75
+  obstacleCheckRadius: 2
   memberPrefab: {fileID: 3469642581209465127, guid: 6160acb228aa7ec499ed75c7948fbe2e,
     type: 3}
