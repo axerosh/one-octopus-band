@@ -5,6 +5,7 @@ using UnityEngine;
 public class RequestBubble : MonoBehaviour
 {
 	public Sprite drumSprite;
+	public Sprite triangleSprite;
 	public Sprite drumstickSprite;
 	public Sprite guitarSprite;
 	public Sprite maracasSprite;
@@ -32,6 +33,9 @@ public class RequestBubble : MonoBehaviour
 		{
 			case InstrumentType.Drum:
 				spriteRenderer.sprite = drumSprite;
+				break;
+			case InstrumentType.Triangle:
+				spriteRenderer.sprite = triangleSprite;
 				break;
 			// case InstrumentType.Drumstick:
 			// 	spriteRenderer.sprite = drumstickSprite;
