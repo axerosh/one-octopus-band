@@ -2114,6 +2114,26 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 3631094470722836232, guid: b409f654b9ba11848800bc0a95ef5db4,
+        type: 3}
+      propertyPath: OnSmacked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1884142961}
+    - target: {fileID: 3631094470722836232, guid: b409f654b9ba11848800bc0a95ef5db4,
+        type: 3}
+      propertyPath: OnSmacked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSmacked
+      objectReference: {fileID: 0}
+    - target: {fileID: 3631094470722836232, guid: b409f654b9ba11848800bc0a95ef5db4,
+        type: 3}
+      propertyPath: OnSmacked.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3631094470722836232, guid: b409f654b9ba11848800bc0a95ef5db4,
+        type: 3}
+      propertyPath: OnSmacked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b409f654b9ba11848800bc0a95ef5db4, type: 3}
 --- !u!1001 &2890479996884653308

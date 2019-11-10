@@ -17,6 +17,10 @@ public class AudienceManager : MonoBehaviour
 	public int maxActiveRequestCount;
 	public float minRequestCooldown;
 	public float maxRequestCooldown;
+    public float shorelineChance = 0.3f;
+    public AudioSource audioSource;
+    public AudioClip[] shorelineShouts;
+    public float volumeScaler = 1f;
     
     public RequestEvent onNewRequest;
 
@@ -27,6 +31,7 @@ public class AudienceManager : MonoBehaviour
 	private Dictionary<Request, AudienceMember> activeRequests = new Dictionary<Request, AudienceMember>();
 	private AudienceSpawner spawner;
 
+
 	private float startTime;
 
     private int failedRequests;
@@ -34,6 +39,9 @@ public class AudienceManager : MonoBehaviour
 	void Start()
 	{
 		startTime = Time.time;
+        Random.InitState(System.DateTime.Now.Millisecond);
+        audioSource.volume = volumeScaler;
+
 
 		foreach (var instrument in System.Enum.GetValues(typeof(InstrumentType)))
 		{
@@ -95,6 +103,13 @@ public class AudienceManager : MonoBehaviour
                 else
                 {
                     failedRequests++;
+                    var shoreLineNumber = Random.Range(0, 10);
+                    if (shoreLineNumber > (10*shorelineChance)-1)
+                    {
+                        PlayShoreline();
+                    }
+
+                    Debug.Log(failedRequests + " failed requests");
                 }
             }
             request.timeLeft = request.maxTimeLeft;
@@ -144,8 +159,9 @@ public class AudienceManager : MonoBehaviour
                 }
                 else
                 {
-                    request.met = request.timeLeft > 0;
-                }
+                    request.met = true;
+					member.CompleteRequest();
+				}
             }
         }
         
@@ -158,4 +174,13 @@ public class AudienceManager : MonoBehaviour
 			spawner.DrawGizmosMember(member);
 		}
 	}
+
+    private void PlayShoreline()
+    {
+        if (shorelineShouts.Length > 0)
+		{
+			audioSource.clip = shorelineShouts[Random.Range(0, shorelineShouts.Length)];
+			audioSource.Play();
+		}
+    }
 }

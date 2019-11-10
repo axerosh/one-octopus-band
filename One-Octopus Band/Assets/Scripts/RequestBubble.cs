@@ -5,6 +5,7 @@ using UnityEngine;
 public class RequestBubble : MonoBehaviour
 {
 	public Sprite drumSprite;
+	public Sprite triangleSprite;
 	public Sprite drumstickSprite;
 	public Sprite guitarSprite;
 	public Sprite maracasSprite;
@@ -27,11 +28,16 @@ public class RequestBubble : MonoBehaviour
 	}
 
 	public void SetRequest(Request request)
-    {
-        switch (request.instrumentType)
+	{
+		spriteRenderer.color = Color.white;
+		tail.GetComponent<SpriteRenderer>().color = Color.white;
+		switch (request.instrumentType)
 		{
 			case InstrumentType.Drum:
 				spriteRenderer.sprite = drumSprite;
+				break;
+			case InstrumentType.Triangle:
+				spriteRenderer.sprite = triangleSprite;
 				break;
 			// case InstrumentType.Drumstick:
 			// 	spriteRenderer.sprite = drumstickSprite;
@@ -50,6 +56,13 @@ public class RequestBubble : MonoBehaviour
 				break;
 		}
 		SetVisible(true);
+	}
+
+	public void CompleteRequest()
+	{
+		print("Request completed");
+		spriteRenderer.color = Color.green;
+		tail.GetComponent<SpriteRenderer>().color = Color.green;
 	}
 
 	public void DisableRequest()
