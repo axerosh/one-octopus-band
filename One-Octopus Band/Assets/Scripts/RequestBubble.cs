@@ -28,8 +28,10 @@ public class RequestBubble : MonoBehaviour
 	}
 
 	public void SetRequest(Request request)
-    {
-        switch (request.instrumentType)
+	{
+		spriteRenderer.color = Color.white;
+		tail.GetComponent<SpriteRenderer>().color = Color.white;
+		switch (request.instrumentType)
 		{
 			case InstrumentType.Drum:
 				spriteRenderer.sprite = drumSprite;
@@ -54,6 +56,13 @@ public class RequestBubble : MonoBehaviour
 				break;
 		}
 		SetVisible(true);
+	}
+
+	public void CompleteRequest()
+	{
+		print("Request completed");
+		spriteRenderer.color = Color.green;
+		tail.GetComponent<SpriteRenderer>().color = Color.green;
 	}
 
 	public void DisableRequest()
