@@ -29,8 +29,11 @@ public class Smackable : MonoBehaviour
 			audioQueue.Enqueue(audioSource);
 		}
 		
-		audioSource.clip = clips[Random.Range(0,clips.Length)];
-		audioSource.Play();
+		if (clips.Length > 0)
+		{
+			audioSource.clip = clips[Random.Range(0, clips.Length)];
+			audioSource.Play();
+		}
 
         Debug.Log(InstrumentType);        
         OnSmacked.Invoke(InstrumentType);

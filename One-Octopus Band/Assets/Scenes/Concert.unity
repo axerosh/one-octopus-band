@@ -561,12 +561,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ff8a33983f3d34996d78ff472559a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InstrumentType: 1
   OnSmacked:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1884142961}
+        m_MethodName: OnSmacked
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   audioSourcePrefab: {fileID: 2574044970171691851, guid: 04cf03e43f75e274fb8618e1751bfcc2,
     type: 3}
-  clip: {fileID: 8300000, guid: 6f50604e6844e414db8f595c4bf25bfb, type: 3}
+  clips:
+  - {fileID: 8300000, guid: 6f50604e6844e414db8f595c4bf25bfb, type: 3}
 --- !u!4 &493428636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 35f22fff154d2177eaddf059c7764140,
@@ -611,12 +624,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ff8a33983f3d34996d78ff472559a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InstrumentType: 2
   OnSmacked:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1884142961}
+        m_MethodName: OnSmacked
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   audioSourcePrefab: {fileID: 2574044970171691851, guid: 04cf03e43f75e274fb8618e1751bfcc2,
     type: 3}
-  clip: {fileID: 8300000, guid: 581a24c3c69102140bb834e293be1861, type: 3}
+  clips:
+  - {fileID: 8300000, guid: c7ac257c1691c9745aa4cc6885a7e234, type: 3}
 --- !u!4 &631774588 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3ec7168663bede3608d334dbe7ac4cc8,
@@ -2044,6 +2070,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890479997899862140, guid: 8fc0d85637f4aa9199dad32d06d6d6fd,
+        type: 3}
+      propertyPath: OnSmacked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1884142961}
+    - target: {fileID: 2890479997899862140, guid: 8fc0d85637f4aa9199dad32d06d6d6fd,
+        type: 3}
+      propertyPath: OnSmacked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSmacked
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890479998160511655, guid: 8fc0d85637f4aa9199dad32d06d6d6fd,
+        type: 3}
+      propertyPath: OnSmacked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1884142961}
+    - target: {fileID: 2890479998160511655, guid: 8fc0d85637f4aa9199dad32d06d6d6fd,
+        type: 3}
+      propertyPath: OnSmacked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSmacked
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890479996867541823, guid: 8fc0d85637f4aa9199dad32d06d6d6fd,
+        type: 3}
+      propertyPath: OnSmacked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1884142961}
+    - target: {fileID: 2890479996867541823, guid: 8fc0d85637f4aa9199dad32d06d6d6fd,
+        type: 3}
+      propertyPath: OnSmacked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSmacked
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890479996867541823, guid: 8fc0d85637f4aa9199dad32d06d6d6fd,
+        type: 3}
+      propertyPath: OnSmacked.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890479996867541823, guid: 8fc0d85637f4aa9199dad32d06d6d6fd,
+        type: 3}
+      propertyPath: OnSmacked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fc0d85637f4aa9199dad32d06d6d6fd, type: 3}

@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class AudienceManager : MonoBehaviour
 {
-    public int score = 0;
+	private int score = 0;
     public Text scoreList;
     public int maxMemberCount;
 	public int maxActiveRequestCount;
@@ -87,7 +87,10 @@ public class AudienceManager : MonoBehaviour
                 request.Progress = 0;
                 toRemove.Add(request);
                 score += 10;
-                scoreList.text = $"Score: {score}";
+				if (scoreList != null)
+				{
+					scoreList.text = $"Score: {score}";
+				}
             }
             else
             {
@@ -96,6 +99,7 @@ public class AudienceManager : MonoBehaviour
         }
         foreach (var request in toRemove)
         {
+			print("Remove request " + request);
             activeRequests.TryGetValue(request, out var member);
             freeRequests.Add(request);
             freeMembers.Add(member);
