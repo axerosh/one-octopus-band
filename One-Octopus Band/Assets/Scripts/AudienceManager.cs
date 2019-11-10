@@ -75,7 +75,6 @@ public class AudienceManager : MonoBehaviour
 	{
         List<Request> toRemove = new List<Request>();
         
-        
         foreach (var requestMember in activeRequests)
         {
             var request = requestMember.Key;
