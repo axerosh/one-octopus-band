@@ -27,9 +27,12 @@ public class AudienceManager : MonoBehaviour
 	void Start()
 	{
 		startTime = Time.time;
-		foreach (var request in System.Enum.GetValues(typeof(InstrumentType)))
+		foreach (var instrument in System.Enum.GetValues(typeof(InstrumentType)))
 		{
-			freeRequests.Add(new Request((InstrumentType)request, 0));
+			var request = ScriptableObject.CreateInstance<Request>();
+			request.instrumentType = (InstrumentType)instrument;
+			request.Progress = 0;
+			freeRequests.Add(request);
 		}
 
 		spawner = GetComponent<AudienceSpawner>();
