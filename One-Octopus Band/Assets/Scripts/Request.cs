@@ -3,11 +3,13 @@ using UnityEditor;
 
 public class Request : ScriptableObject
 {
-    public Request(InstrumentType instrumentType, int progress)
-    {
+    public Request(InstrumentType instrumentType, double maxTimeLeft = 10) {
         this.instrumentType = instrumentType;
-        Progress = progress;
+        this.maxTimeLeft = maxTimeLeft;
+        timeLeft = maxTimeLeft;
     }
     public InstrumentType instrumentType;
-    public int Progress;
+    public bool met = false;
+    public double maxTimeLeft;
+    public double timeLeft;
 }
