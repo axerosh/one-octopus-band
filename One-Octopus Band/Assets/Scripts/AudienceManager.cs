@@ -113,6 +113,7 @@ public class AudienceManager : MonoBehaviour
                 }
             }
             request.timeLeft = request.maxTimeLeft;
+            request.met = false;
             freeRequests.Add(request);
             freeMembers.Add(member);
             activeRequests.Remove(request);
@@ -143,7 +144,6 @@ public class AudienceManager : MonoBehaviour
 	
     public void OnSmacked(InstrumentType instrument)
 	{
-        List<Request> toRemove = new List<Request>();
         
         foreach (var requestMember in activeRequests)
         {
@@ -159,7 +159,8 @@ public class AudienceManager : MonoBehaviour
                 }
                 else
                 {
-                    request.met = true;
+                    Debug.Log(instrument + "met");
+                    request.met = request.timeLeft > 0;
 					member.CompleteRequest();
 				}
             }
