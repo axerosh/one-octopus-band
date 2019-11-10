@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drumSprite: {fileID: 21300000, guid: 64820760ea1f74d4dbe440d01e5a04b7, type: 3}
+  triangleSprite: {fileID: 21300000, guid: 7c58d4351ab96ed43b6fdc87fbd8aab6, type: 3}
   drumstickSprite: {fileID: 21300000, guid: 7dfcba81175b88b4abdcc20c856c01c9, type: 3}
   guitarSprite: {fileID: 21300000, guid: 8771c3a1c2071b34194ed858a09652c1, type: 3}
   maracasSprite: {fileID: 21300000, guid: 7726a37226ed09a4e8f67c5233dd8b00, type: 3}

@@ -43,6 +43,11 @@ public class AudienceMember : MonoBehaviour
 		requestBubble.DisableRequest();
 	}
 
+	public void CompleteRequest()
+	{
+		requestBubble.CompleteRequest();
+	}
+
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.cyan;

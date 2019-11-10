@@ -47,6 +47,8 @@ public class AudienceManager : MonoBehaviour
 		{
 			var request = ScriptableObject.CreateInstance<Request>();
 			request.instrumentType = (InstrumentType)instrument;
+			request.maxTimeLeft = 10.0;
+			request.timeLeft = request.maxTimeLeft;
 			freeRequests.Add(request);
 		}
 
@@ -147,7 +149,6 @@ public class AudienceManager : MonoBehaviour
         {
             var request = requestMember.Key;
             var member = requestMember.Value;
-            Debug.Log(request.instrumentType + " " + request.timeLeft);
 
             if (request.instrumentType == instrument)
             {
@@ -158,8 +159,9 @@ public class AudienceManager : MonoBehaviour
                 }
                 else
                 {
-                    request.met = request.timeLeft > 0;
-                }
+                    request.met = true;
+					member.CompleteRequest();
+				}
             }
         }
         
