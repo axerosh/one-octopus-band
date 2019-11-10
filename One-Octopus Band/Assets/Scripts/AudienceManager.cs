@@ -39,6 +39,8 @@ public class AudienceManager : MonoBehaviour
 		{
 			var request = ScriptableObject.CreateInstance<Request>();
 			request.instrumentType = (InstrumentType)instrument;
+			request.maxTimeLeft = 10.0;
+			request.timeLeft = request.maxTimeLeft;
 			freeRequests.Add(request);
 		}
 
