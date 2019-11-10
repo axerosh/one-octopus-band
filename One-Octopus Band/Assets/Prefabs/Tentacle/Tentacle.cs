@@ -17,10 +17,15 @@ public class Tentacle : MonoBehaviour {
 
     private Vector2 reticule;
 
+    public float soundThreshold;
+    public AudioClip[] clips;
+    private AudioSource player;
+
     void Start() {
         if(controller != 0) {
             reticule = new Vector2(0, 0);
         }
+        player = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate() {
