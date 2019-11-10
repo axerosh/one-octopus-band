@@ -4,8 +4,8 @@ using UnityEngine;
 
 public enum InstrumentType {
 	Drum,
+    Triangle,
 	//Drumstick,
-    //Triangle,
     Guitar,
 	//Chicken,
     Maracas,

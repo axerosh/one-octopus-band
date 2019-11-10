@@ -5,10 +5,9 @@ using System.Collections.Generic;
 
 public class Smackable : MonoBehaviour
 {
-    public InstrumentType InstrumentType;
+    public InstrumentType instrumentType;
     public SmackedEvent OnSmacked;
 	public AudioSource audioSourcePrefab;
-    public string requiredTool;
     public AudioClip[] clips;
     public float VolumeScaler = 1f;
 
@@ -37,6 +36,6 @@ public class Smackable : MonoBehaviour
 			audioSource.Play();
 		}
     
-        OnSmacked.Invoke(InstrumentType);
+        OnSmacked.Invoke(instrumentType);
     }
 }

@@ -1,19 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
 
 public class AudienceManager : MonoBehaviour
 {
-	private int score = 0;
-    public Text scoreList;
+    private int score = 0;
+    public Text scoreDisplay;
+    public Text gameOverDisplay;
+    public Button restart;
+    public int maxFailedRequests = 10;
     public int maxMemberCount;
 	public int maxActiveRequestCount;
 	public float minRequestCooldown;
 	public float maxRequestCooldown;
-	public RequestEvent onNewRequest;
+    
+    public RequestEvent onNewRequest;
 
 	private float newRequestTime = 0.0f;
 	private List<Request> freeRequests = new List<Request>();
@@ -24,14 +29,16 @@ public class AudienceManager : MonoBehaviour
 
 	private float startTime;
 
+    private int failedRequests;
+
 	void Start()
 	{
 		startTime = Time.time;
+
 		foreach (var instrument in System.Enum.GetValues(typeof(InstrumentType)))
 		{
 			var request = ScriptableObject.CreateInstance<Request>();
 			request.instrumentType = (InstrumentType)instrument;
-			request.Progress = 0;
 			freeRequests.Add(request);
 		}
 
@@ -45,6 +52,14 @@ public class AudienceManager : MonoBehaviour
 				freeMembers.Add(newMember);
 			}
 		}
+
+        gameOverDisplay.enabled = false;
+        restart.enabled = false;
+        restart.gameObject.SetActive(false);
+        for (int i = 0; i < restart.transform.childCount; i++)
+        {
+            restart.transform.GetChild(i).gameObject.SetActive(false);
+        }
 	}
 
 	private void Update()
@@ -53,7 +68,43 @@ public class AudienceManager : MonoBehaviour
 			newRequestTime = Time.time + Random.Range(minRequestCooldown, maxRequestCooldown);
 			TryIssueRequest();
 		}
-	}
+        List<Request> toRemove = new List<Request>();
+        foreach (var requestMember in activeRequests)
+        {
+            requestMember.Key.timeLeft -= Time.deltaTime;
+            if (requestMember.Key.timeLeft < 0) toRemove.Add(requestMember.Key);
+
+        }
+        foreach (var request in toRemove)
+        {
+            activeRequests.TryGetValue(request, out var member);
+            if (!request.met)
+            {
+                if (failedRequests >= maxFailedRequests)
+                {
+
+                    gameOverDisplay.enabled = true;
+                    restart.enabled = true;
+                    restart.gameObject.SetActive(true);
+                    for (int i = 0; i < restart.transform.childCount; i++)
+                    {
+                        restart.transform.GetChild(i).gameObject.SetActive(true);
+                    }
+                }
+                else
+                {
+                    failedRequests++;
+
+                    Debug.Log(failedRequests + " failed requests");
+                }
+            }
+            request.timeLeft = request.maxTimeLeft;
+            freeRequests.Add(request);
+            freeMembers.Add(member);
+            activeRequests.Remove(request);
+            member.DisableRequest();
+        }
+    }
 
 	private void TryIssueRequest()
 	{
@@ -70,8 +121,12 @@ public class AudienceManager : MonoBehaviour
 		}
 	}
 
-
-	public void OnSmacked(InstrumentType instrument)
+    public void OnRestartClicked()
+    {
+        SceneManager.LoadScene(0);
+    }
+	
+    public void OnSmacked(InstrumentType instrument)
 	{
         List<Request> toRemove = new List<Request>();
         
@@ -79,33 +134,22 @@ public class AudienceManager : MonoBehaviour
         {
             var request = requestMember.Key;
             var member = requestMember.Value;
-            if (instrument != request.instrumentType) continue;
-            
-            
+            Debug.Log(request.instrumentType + " " + request.timeLeft);
 
-            if (request.Progress == 5)
+            if (request.instrumentType == instrument)
             {
-                request.Progress = 0;
-                toRemove.Add(request);
-                score += 10;
-				if (scoreList != null)
-				{
-					scoreList.text = $"Score: {score}";
-				}
-            }
-            else
-            {
-                request.Progress++;
+                if (request.met)
+                {
+                    score += 10;
+                    scoreDisplay.text = $"Score: {score}";
+                }
+                else
+                {
+                    request.met = request.timeLeft > 0;
+                }
             }
         }
-        foreach (var request in toRemove)
-        {
-            activeRequests.TryGetValue(request, out var member);
-            freeRequests.Add(request);
-            freeMembers.Add(member);
-            activeRequests.Remove(request);
-            member.DisableRequest();
-        }
+        
 	}
 
 	private void OnDrawGizmosSelected()
